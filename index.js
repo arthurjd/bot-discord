@@ -1,9 +1,8 @@
-
 const { Client, Events, GatewayIntentBits, Collection, ReactionUserManager } = require('discord.js');
 
 const dotenv = require('dotenv')
 dotenv.config()
-const { TOKEN, CLIENT_ID, GUILD_ID} = process.env
+const { TOKEN, CLIENT_ID, GUILD_ID, CHANNEL_VOICE_ID} = process.env
 
 //importação comandos
 const fs = require('node:fs')
@@ -29,7 +28,7 @@ client.once(Events.ClientReady, c => {
 	console.log(`Ready! Logged in as ${c.user.tag}`);
 });
 
-client.login(TOKEN);
+client.login(TOKEN)
 
 
 client.on(Events.InteractionCreate, async interaction =>{
